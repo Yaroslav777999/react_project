@@ -3,6 +3,7 @@ import { Form } from './components/Form/Form';
 import { MessageList } from './components/MessageList/MessageList';
 import { nanoid } from 'nanoid';
 import './index.css';
+import List from './components/List/List';
 
 export interface Message {
   id: string;
@@ -54,12 +55,18 @@ export const App: FC = () => {
 
   return (
     <>
-    <div className='bg'>
-      <h1 className='header'>Welcome to the ReaChat</h1>
-      <MessageList messages={messages} />
-      <Form addMessage={handleSendMessage} />
+      <div className='bg'>
+        <p className='header'>Welcome to the ReaChat</p>
+
+
+        <div className='wrp'>
+          <div className='wrp-chat'>
+            <MessageList messages={messages} />
+            <Form addMessage={handleSendMessage} />
+          </div>
+          <List />
+        </div>
       </div>
-      
     </>
   );
 };

@@ -2,7 +2,6 @@ import React, { useState, FC } from 'react';
 import { Input, Button } from '@mui/material';
 import PropTypes from 'prop-types';
 
-
 interface Message {
   text: string;
   author: string;
@@ -26,7 +25,7 @@ export const Form: FC<FormProps> = ({ addMessage }) => {
 
   return (
     <form onSubmit={handleText}>
-      <Input placeholder='печатайте текст' value={text} onChange={(ev) => setText(ev.target.value)} />
+      <Input value={text} onChange={(ev) => setText(ev.target.value)} />
       <Button variant="contained" type="submit" color="success">
         Send
       </Button>
